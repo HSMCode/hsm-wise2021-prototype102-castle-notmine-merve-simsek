@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
  
 public class Score : MonoBehaviour
 {
-    public Text scoreText;
+    public TMP_Text scoreText;
  
     private float timer;
-    public static int score;
+    public int score;
  
     void Start()
     {
