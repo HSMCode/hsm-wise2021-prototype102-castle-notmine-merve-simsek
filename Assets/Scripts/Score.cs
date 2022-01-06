@@ -47,7 +47,7 @@ public class Score : MonoBehaviour
     public void AllowedMisses(int subValue) // missing targets will be punished
     {
         missedTargets -= subValue;
-        missedText.text = "Missing: " + missedTargets;
+        missedText.text = "Allowed misses: " + missedTargets;
 
         if (missedTargets < 0) // GameOver when 5 targets are missed
         {
