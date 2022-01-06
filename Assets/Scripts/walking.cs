@@ -13,6 +13,7 @@ public class walking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Up and Down Movement for the Horse
         float y = Mathf.PingPong(Time.time, 0.3f);
         transform.position = new Vector3(transform.position.x, y, transform.position.z);
     }
