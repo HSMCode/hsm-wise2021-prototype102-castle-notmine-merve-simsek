@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
         missedText.text = "Allowed misses: " + missedTargets;
         missedTargets = 5;
         
-        gameOverUI.SetActive(false);
+        gameOverUI.SetActive(false); 
     }
  
     public virtual void Update()
