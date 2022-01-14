@@ -7,6 +7,7 @@ public class lookat : MonoBehaviour
     public Transform target;
     private void Update()
     {
+        // Lance will follow Circle ; ROTATE lance
         Vector3 targ = target.transform.position;
              targ.z = 0f;
  

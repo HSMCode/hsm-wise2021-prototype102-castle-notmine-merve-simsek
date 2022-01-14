@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Sir_Lanzelot_v3.unity
+    guid: 9b0d392568ece3e408c881c1e2a92004
   m_configObjects: {}

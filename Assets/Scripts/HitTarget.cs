@@ -21,6 +21,19 @@ public class HitTarget : MonoBehaviour
             score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
             score.AddScore(3);
         }
+
         Destroy(gameObject, 0.1f);
+
     }
+
+    void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Border"))
+            {
+                score = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
+                score.AllowedMisses(1);
+            }
+            Destroy(gameObject, 0.1f);
+        }
 }
+
