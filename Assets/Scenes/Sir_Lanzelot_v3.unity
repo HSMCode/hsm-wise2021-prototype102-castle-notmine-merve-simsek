@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 260427660}
   - component: {fileID: 260427659}
   - component: {fileID: 260427661}
+  - component: {fileID: 260427662}
   m_Layer: 0
   m_Name: Lance
   m_TagString: Lance
@@ -5037,6 +5038,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608a8e564a0cd524098d8f0c7b2846ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &260427662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260427653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f2832985e36f144daafa920a05e76e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 1776270970}
+  score: 0
+  finalScore: 0
 --- !u!1 &348661897
 GameObject:
   m_ObjectHideFlags: 0
@@ -5064,7 +5080,6 @@ Transform:
   m_LocalPosition: {x: -5.6893806, y: 0.057529926, z: 12.299993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1059816347}
   - {fileID: 1926423878}
   - {fileID: 1529067831}
   m_Father: {fileID: 0}
@@ -5678,6 +5693,7 @@ GameObject:
   - component: {fileID: 1059816346}
   - component: {fileID: 1059816345}
   - component: {fileID: 1059816344}
+  - component: {fileID: 1059816348}
   m_Layer: 0
   m_Name: LevelBorderLeft
   m_TagString: Border
@@ -5754,13 +5770,30 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059816343}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.93, y: 0.18247007, z: -12.439993}
-  m_LocalScale: {x: 1, y: 10, z: 1}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 3.6796904, y: -0.015000008, z: -0.42999983}
+  m_LocalScale: {x: 0.5, y: 5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 348661898}
-  m_RootOrder: 0
+  m_Father: {fileID: 1395085169}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1059816348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059816343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1806bd208e97e4cb38866fa9977f6aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missedText: {fileID: 1041325327}
+  gameOverUI: {fileID: 2005180924}
+  gameOverInformation: {fileID: 1994435633}
+  score: {fileID: 0}
+  missedTargets: 0
 --- !u!1 &1248585056
 GameObject:
   m_ObjectHideFlags: 0
@@ -6151,6 +6184,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 260427656}
+  - {fileID: 1059816347}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -6430,7 +6464,7 @@ Transform:
   m_LocalScale: {x: 22, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 348661898}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1529067832
 MonoBehaviour:
@@ -6700,11 +6734,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1776270970}
-  missedText: {fileID: 1041325327}
-  gameOverUI: {fileID: 2005180924}
-  gameOverInformation: {fileID: 1994435633}
   score: 0
-  missedTargets: 5
+  finalScore: 0
 --- !u!1 &1915184742
 GameObject:
   m_ObjectHideFlags: 0
@@ -6895,7 +6926,7 @@ Transform:
   m_LocalScale: {x: 22, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 348661898}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1926423879
 MonoBehaviour:

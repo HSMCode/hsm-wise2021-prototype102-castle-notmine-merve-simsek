@@ -6,61 +6,41 @@ using TMPro;
 public class Score : MonoBehaviour
 {
     public TMP_Text scoreText;
-    public TMP_Text missedText;
-    
-    public GameObject gameOverUI;
-    public TMP_Text gameOverInformation;
- 
     private float timer;
     public int score;
-    public int missedTargets;
- 
+    public int finalScore;
+    
     void Start()
     {
         score = 0;
-        scoreText.text = "Score: " + score;
-        missedText.text = "Allowed misses: " + missedTargets;
-        missedTargets = 5;
         
-        gameOverUI.SetActive(false); 
     }
- 
-    public virtual void Update()
+    void Update()
     {
+        UIUpdate();
+        finalScore = score;
         // add 1 point every second
         timer += Time.deltaTime;
  
         if (timer > 1f)
         {
-            AddScore(1);
+            score++;
             timer = 0;
         }
     }
- 
-    public void AddScore(int addedValue)
+    void OnCollisionEnter(Collision collision)
     {
-        // add score when hitting a target
-        score += addedValue;
-        scoreText.text = "Score: " + score;
-    }
-    
-    public void AllowedMisses(int subValue) // missing targets will be punished
-    {
-        missedTargets -= subValue;
-        missedText.text = "Allowed misses: " + missedTargets;
-
-        if (missedTargets < 0) // GameOver when 5 targets are missed
+        if (collision.gameObject.CompareTag("Target"))
         {
-            GameOver();
+            score += 3;
+            Debug.Log("+3");
         }
+
+        Destroy(collision.gameObject, 0.1f);
     }
 
-    void GameOver()
+    private void UIUpdate()
     {
-        Time.timeScale = 0;
-        Score finalScore = GameObject.FindGameObjectWithTag("Score").GetComponent<Score>();
-        gameOverInformation.text = "Congratulations, Knight, you managed to achieve " + finalScore.score + " point(s) in the tournament!";
-
-        gameOverUI.SetActive(true);
+        scoreText.text = "Score: " + score;
     }
 }
