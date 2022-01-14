@@ -10,6 +10,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/negativeScore.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/moveTargets.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectId" id="23KAmii6eQ7lE87wsHO8S34NIh2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -56,6 +60,7 @@
       <updated>1641472743712</updated>
       <workItem from="1641472743714" duration="7452000" />
       <workItem from="1641549442437" duration="3100000" />
+      <workItem from="1642163482333" duration="4733000" />
     </task>
     <servers />
   </component>
