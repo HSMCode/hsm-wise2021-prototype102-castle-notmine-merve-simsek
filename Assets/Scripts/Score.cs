@@ -8,6 +8,10 @@ public class Score : MonoBehaviour
     public TMP_Text scoreText;
     private float timer;
     public int score;
+
+    public AudioClip hit;
+    public AudioSource AudioSource;
+    
     //public int finalScore;
 
     void Start()
@@ -33,6 +37,7 @@ public class Score : MonoBehaviour
         if (collision.gameObject.CompareTag("Target"))
         {
             Debug.Log("Sound");
+            AudioSource.Play();
         }
 
         Destroy(collision.gameObject, 0.1f);
