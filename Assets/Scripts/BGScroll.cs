@@ -6,6 +6,7 @@ public class BGScroll : MonoBehaviour
 {
     public float speed = 4f; 
     private Vector3 StartPosition;
+    public float timer;
 
     void Start()
     {
@@ -15,10 +16,22 @@ public class BGScroll : MonoBehaviour
 
     void Update()
     {
-        transform. Translate( translation: Vector3. left*speed*Time.deltaTime);
+        transform. Translate( translation: Vector3.left * speed * Time.deltaTime);
         if (transform.position.x < -21.49f)
         {
             transform.position = StartPosition;
+        }
+        
+        timer += Time.deltaTime;
+
+        if (timer > 25f)
+        {
+            speed = 6f;
+        }
+        
+        if (timer > 50f)
+        {
+            speed = 10f;
         }
     }
 }

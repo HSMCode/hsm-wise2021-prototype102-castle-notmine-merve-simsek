@@ -14,7 +14,8 @@ public class walking : MonoBehaviour
     void Update()
     {
         // Up and Down Movement for the Horse
-        float y = Mathf.PingPong(Time.time, 0.3f);
+        float y = Mathf.PingPong(Time.time, 0.2f);
+
         transform.position = new Vector3(transform.position.x, y, transform.position.z);
     }
 }

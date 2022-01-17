@@ -8,14 +8,12 @@ public class negativeScore : MonoBehaviour
 {
     public TMP_Text missedText;
     public GameObject gameOverUI;
-    public TMP_Text gameOverInformation;
-    
-    public Score score;
+    public TextMeshProUGUI gameOverInformation;
     public int missedTargets;
+    public float timer;
 
     private void Start()
     {
-        score = GetComponent<Score>();
         missedTargets = 5;
         gameOverUI.SetActive(false); 
     }
@@ -23,6 +21,12 @@ public class negativeScore : MonoBehaviour
     private void Update()
     {
         UIUpdate();
+        timer += Time.deltaTime;
+        
+        if (missedTargets < 0) // GameOver when 5 targets are missed
+        {
+            GameOver();
+        }
     }
 
    public void OnTriggerEnter(Collider other)
@@ -33,11 +37,6 @@ public class negativeScore : MonoBehaviour
 
         }
         Destroy(other.gameObject, 0.1f);
-        
-        if (missedTargets < 0) // GameOver when 5 targets are missed
-        {
-            GameOver();
-        }
     }
 
     private void UIUpdate()
@@ -45,10 +44,12 @@ public class negativeScore : MonoBehaviour
         missedText.text = "Allowed misses: " + missedTargets;
     }
 
-    private void GameOver()
-    {
+    public void GameOver()
+    { 
         Time.timeScale = 0;
         gameOverUI.SetActive(true);
-        gameOverInformation.text = "Congratulations, Knight, you managed to achieve " + score.finalScore + " point(s) in the tournament!";
+        gameOverInformation.text = "Congratulations, Knight, you managed to achieve " + (int)timer +
+                                   " point(s) in the tournament!";
+        
     }
 }
