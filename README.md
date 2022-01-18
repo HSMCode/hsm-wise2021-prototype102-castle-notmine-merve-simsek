@@ -27,12 +27,12 @@ What things you need to install the software and how to install them
 
 ## Authors
 
-  - **Anna** - *Game Design* -
+  - **Anna** - *Game Design & Developing* -
   - **Merve** - *Initialising Unity Project* -
   - **Frederik** - *Developing* -
   - **Dominik** - *Developing* -
   - **Carola** - *Developing & Polishing* -
-  - **Billie Thompson** - *Provided README Template* -
+  - **Billie Thompson** - *Provided README Template* - 
     [PurpleBooth](https://github.com/PurpleBooth)
 
 
