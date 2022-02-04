@@ -8,32 +8,36 @@ public class Score : MonoBehaviour
     public TMP_Text scoreText;
     private float timer;
     public int score;
-    public int finalScore;
+
+    public AudioClip hit;
+    public AudioSource AudioSource;
     
+    //public int finalScore;
+
     void Start()
     {
         score = 0;
-        
     }
     void Update()
     {
         UIUpdate();
-        finalScore = score;
+        //finalScore = score;
         // add 1 point every second
         timer += Time.deltaTime;
- 
+
         if (timer > 1f)
         {
             score++;
             timer = 0;
         }
+        
     }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Target"))
         {
-            score += 3;
-            Debug.Log("+3");
+            Debug.Log("Sound");
+            AudioSource.Play();
         }
 
         Destroy(collision.gameObject, 0.1f);

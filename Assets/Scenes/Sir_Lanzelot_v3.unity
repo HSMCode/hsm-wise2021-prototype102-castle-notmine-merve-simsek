@@ -5052,7 +5052,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1776270970}
   score: 0
-  finalScore: 0
+  hit: {fileID: 8300000, guid: 6403c366333d04df6acaf60c544620b8, type: 3}
+  AudioSource: {fileID: 519420030}
 --- !u!1 &348661897
 GameObject:
   m_ObjectHideFlags: 0
@@ -5265,6 +5266,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5280,6 +5282,102 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!82 &519420030
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0f07d0626f2d3404eac4ae006dea7986, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.496
+  m_Pitch: 3
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.45
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -5792,8 +5890,8 @@ MonoBehaviour:
   missedText: {fileID: 1041325327}
   gameOverUI: {fileID: 2005180924}
   gameOverInformation: {fileID: 1994435633}
-  score: {fileID: 0}
   missedTargets: 0
+  timer: 0
 --- !u!1 &1248585056
 GameObject:
   m_ObjectHideFlags: 0
@@ -5971,6 +6069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1325137848}
   - component: {fileID: 1325137847}
+  - component: {fileID: 1325137849}
   m_Layer: 0
   m_Name: TargetSpawner
   m_TagString: Untagged
@@ -6007,6 +6106,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1325137849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325137846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c87e4ec93798489298599b9cfbcf356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
 --- !u!1 &1332819558
 GameObject:
   m_ObjectHideFlags: 0
@@ -6052,6 +6164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  timer: 0
 --- !u!212 &1332819561
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6365,6 +6478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  timer: 0
 --- !u!212 &1465438066
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6480,6 +6594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 2005180924}
   gameOverInformation: {fileID: 1994435633}
+  timer: 0
 --- !u!65 &1529067833
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6735,7 +6850,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1776270970}
   score: 0
-  finalScore: 0
+  hit: {fileID: 0}
+  AudioSource: {fileID: 0}
 --- !u!1 &1915184742
 GameObject:
   m_ObjectHideFlags: 0
@@ -6781,6 +6897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+  timer: 0
 --- !u!212 &1915184745
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6942,6 +7059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 2005180924}
   gameOverInformation: {fileID: 1994435633}
+  timer: 0
 --- !u!1 &1994435631
 GameObject:
   m_ObjectHideFlags: 0
@@ -6955,7 +7073,7 @@ GameObject:
   - component: {fileID: 1994435633}
   m_Layer: 5
   m_Name: GameOverInformation
-  m_TagString: Untagged
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6999,7 +7117,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Congratulations, Knight, you achieved X points in the tournament!
+  m_text: '"Congratulations, Knight, you managed to achieve " + (int)timer + " point(s)
+    in the tournament!";'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7062,7 +7181,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -249.83008, y: 0, z: -249.83008, w: -104.85547}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
